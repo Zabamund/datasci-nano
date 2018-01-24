@@ -108,3 +108,7 @@ venv.bak/
 /lesson3
 /lesson8
 /pers-notes
+
+# other
+.DS_Store
+/jnotebooks
