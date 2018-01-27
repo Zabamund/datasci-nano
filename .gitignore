@@ -112,3 +112,4 @@ venv.bak/
 # other
 .DS_Store
 /jnotebooks
+noshow_Vagner.ipynb
