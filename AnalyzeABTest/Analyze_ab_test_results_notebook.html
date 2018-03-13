@@ -11797,7 +11797,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[270]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -11826,7 +11826,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[271]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/ab_data.csv&#39;</span><span class="p">)</span>
@@ -11843,7 +11843,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[2]:</div>
+<div class="prompt output_prompt">Out[271]:</div>
 
 
 
@@ -11936,7 +11936,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[272]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">n_rows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
@@ -11953,7 +11953,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[3]:</div>
+<div class="prompt output_prompt">Out[272]:</div>
 
 
 
@@ -11979,7 +11979,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[273]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">unique_users</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">user_id</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
@@ -11996,7 +11996,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[4]:</div>
+<div class="prompt output_prompt">Out[273]:</div>
 
 
 
@@ -12022,7 +12022,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[274]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">converted</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">converted</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">converted</span> <span class="o">==</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
@@ -12040,7 +12040,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[5]:</div>
+<div class="prompt output_prompt">Out[274]:</div>
 
 
 
@@ -12066,7 +12066,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[275]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;check&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;landing_page&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;new_page&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;group&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;treatment&#39;</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
@@ -12087,7 +12087,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[6]:</div>
+<div class="prompt output_prompt">Out[275]:</div>
 
 
 
@@ -12113,7 +12113,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[276]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -12174,7 +12174,7 @@ memory usage: 15.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[277]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># df.head() to avoid scrolling</span>
@@ -12191,7 +12191,7 @@ memory usage: 15.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[8]:</div>
+<div class="prompt output_prompt">Out[277]:</div>
 
 
 
@@ -12287,7 +12287,7 @@ memory usage: 15.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[278]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create new dataframe to edit</span>
@@ -12308,7 +12308,7 @@ memory usage: 15.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[9]:</div>
+<div class="prompt output_prompt">Out[278]:</div>
 
 
 
@@ -12404,7 +12404,7 @@ memory usage: 15.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[279]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Double Check all of the correct rows were removed - this should be 0</span>
@@ -12421,7 +12421,7 @@ memory usage: 15.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[10]:</div>
+<div class="prompt output_prompt">Out[279]:</div>
 
 
 
@@ -12456,7 +12456,7 @@ memory usage: 15.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[280]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -12498,7 +12498,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[281]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">user_id</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
@@ -12514,7 +12514,7 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[12]:</div>
+<div class="prompt output_prompt">Out[281]:</div>
 
 
 
@@ -12540,7 +12540,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[282]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="o">.</span><span class="n">duplicated</span><span class="p">([</span><span class="s1">&#39;user_id&#39;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span>
@@ -12556,7 +12556,7 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[13]:</div>
+<div class="prompt output_prompt">Out[282]:</div>
 
 
 
@@ -12631,7 +12631,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[283]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;user_id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">773192</span><span class="p">]</span>
@@ -12647,7 +12647,7 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[14]:</div>
+<div class="prompt output_prompt">Out[283]:</div>
 
 
 
@@ -12722,7 +12722,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[284]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">user_id</span> <span class="o">==</span> <span class="mi">773192</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">timestamp</span> <span class="o">==</span> <span class="s1">&#39;2017-01-14 02:55:59.590927&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -12739,7 +12739,7 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[15]:</div>
+<div class="prompt output_prompt">Out[284]:</div>
 
 
 
@@ -12805,7 +12805,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[285]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -12821,7 +12821,7 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[16]:</div>
+<div class="prompt output_prompt">Out[285]:</div>
 
 
 
@@ -12917,7 +12917,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[286]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">prob_conv</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">df2</span><span class="o">.</span><span class="n">converted</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span>
@@ -12934,7 +12934,7 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[17]:</div>
+<div class="prompt output_prompt">Out[286]:</div>
 
 
 
@@ -12960,7 +12960,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[287]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">prob_conv_control</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;control&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()[</span><span class="s1">&#39;converted&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;control&#39;</span><span class="p">])</span>
@@ -12977,7 +12977,7 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[18]:</div>
+<div class="prompt output_prompt">Out[287]:</div>
 
 
 
@@ -13003,7 +13003,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[288]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">prob_conv_treatment</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;treatment&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()[</span><span class="s1">&#39;converted&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;treatment&#39;</span><span class="p">])</span>
@@ -13020,7 +13020,7 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[19]:</div>
+<div class="prompt output_prompt">Out[288]:</div>
 
 
 
@@ -13046,7 +13046,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[289]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">prob_new_page</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;group&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
@@ -13063,7 +13063,7 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[20]:</div>
+<div class="prompt output_prompt">Out[289]:</div>
 
 
 
@@ -13150,7 +13150,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[290]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Bayes Theorem:</span>
@@ -13195,7 +13195,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[291]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Calculations</span>
@@ -13214,7 +13214,7 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[22]:</div>
+<div class="prompt output_prompt">Out[291]:</div>
 
 
 
@@ -13240,7 +13240,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[292]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Probability of False Positive</span>
@@ -13258,7 +13258,7 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[23]:</div>
+<div class="prompt output_prompt">Out[292]:</div>
 
 
 
@@ -13275,7 +13275,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[293]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check that PTruePositive + PFalsePositive = 1.0</span>
@@ -13292,7 +13292,7 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[24]:</div>
+<div class="prompt output_prompt">Out[293]:</div>
 
 
 
@@ -13318,7 +13318,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[294]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Probability of True Negative</span>
@@ -13336,7 +13336,7 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[25]:</div>
+<div class="prompt output_prompt">Out[294]:</div>
 
 
 
@@ -13362,7 +13362,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[295]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Probability of False Negative</span>
@@ -13380,7 +13380,7 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[26]:</div>
+<div class="prompt output_prompt">Out[295]:</div>
 
 
 
@@ -13397,7 +13397,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[296]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check that PTrueNegative + PFalseNegative = 1.0</span>
@@ -13414,7 +13414,7 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[27]:</div>
+<div class="prompt output_prompt">Out[296]:</div>
 
 
 
@@ -13462,7 +13462,7 @@ memory usage: 17.7+ MB
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Set up Null and Alternative Hypotheses such that:</p>
-<center>$H_{0}: p_{old}>=p_{new}$</center><center>$H_{1}: p_{old}<p_{new}$</center>
+<center>$H_{0}: p_{old} >= p_{new}$</center><center>$H_{1}: p_{old} < p_{new}$</center>
 </div>
 </div>
 </div>
@@ -13480,7 +13480,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[297]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># .head to avoid scrolling</span>
@@ -13497,7 +13497,7 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[28]:</div>
+<div class="prompt output_prompt">Out[297]:</div>
 
 
 
@@ -13602,7 +13602,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[298]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># p_new is the mean of converted users over entire dataframe</span>
@@ -13620,7 +13620,7 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[29]:</div>
+<div class="prompt output_prompt">Out[298]:</div>
 
 
 
@@ -13646,7 +13646,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[299]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># p_old is the mean of converted users over entire dataframe</span>
@@ -13664,7 +13664,7 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[30]:</div>
+<div class="prompt output_prompt">Out[299]:</div>
 
 
 
@@ -13690,7 +13690,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[300]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># n_new is the size of the group that saw the `new_page`, namely the `treatment` group</span>
@@ -13708,7 +13708,7 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[31]:</div>
+<div class="prompt output_prompt">Out[300]:</div>
 
 
 
@@ -13734,7 +13734,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[301]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># n_old is the size of the group that saw the `old_page`, namely the `control` group</span>
@@ -13752,7 +13752,7 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[32]:</div>
+<div class="prompt output_prompt">Out[301]:</div>
 
 
 
@@ -13778,7 +13778,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[302]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_page_converted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">n_new</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="n">p_new</span><span class="p">,</span> <span class="n">p_new</span><span class="p">])</span>
@@ -13795,13 +13795,13 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[33]:</div>
+<div class="prompt output_prompt">Out[302]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([0, 1, 0, ..., 0, 0, 0])</pre>
+<pre>array([0, 0, 0, ..., 0, 0, 0])</pre>
 </div>
 
 </div>
@@ -13821,7 +13821,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[303]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">old_page_converted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">n_old</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="n">p_old</span><span class="p">,</span> <span class="n">p_old</span><span class="p">])</span>
@@ -13838,13 +13838,13 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[34]:</div>
+<div class="prompt output_prompt">Out[303]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([0, 0, 0, ..., 0, 1, 0])</pre>
+<pre>array([0, 0, 0, ..., 1, 0, 0])</pre>
 </div>
 
 </div>
@@ -13864,7 +13864,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[304]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">p_new_diff</span> <span class="o">=</span> <span class="p">(</span><span class="n">new_page_converted</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_page_converted</span><span class="p">))</span>
@@ -13881,13 +13881,13 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[35]:</div>
+<div class="prompt output_prompt">Out[304]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.11943431284839309</pre>
+<pre>0.11926226687770973</pre>
 </div>
 
 </div>
@@ -13898,7 +13898,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[305]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">p_old_diff</span> <span class="o">=</span> <span class="p">(</span><span class="n">old_page_converted</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">old_page_converted</span><span class="p">))</span>
@@ -13915,13 +13915,13 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[36]:</div>
+<div class="prompt output_prompt">Out[305]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.12210719055027053</pre>
+<pre>0.1190027121164145</pre>
 </div>
 
 </div>
@@ -13932,10 +13932,10 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[306]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># p_new - p_old senso question g.</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># p_new - p_old senso question g. from the simulation</span>
 <span class="n">p_diff</span> <span class="o">=</span> <span class="n">p_new_diff</span> <span class="o">-</span> <span class="n">p_old_diff</span>
 <span class="n">p_diff</span>
 </pre></div>
@@ -13950,13 +13950,48 @@ memory usage: 17.7+ MB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[37]:</div>
+<div class="prompt output_prompt">Out[306]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>-0.0026728777018774352</pre>
+<pre>0.00025955476129523036</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[307]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># p_new - p_old senso question g. from difference observed in ab_data.csv</span>
+<span class="n">calc_diff</span> <span class="o">=</span> <span class="n">prob_conv_treatment</span> <span class="o">-</span> <span class="n">prob_conv_control</span>
+<span class="n">calc_diff</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[307]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>-0.0015782389853555567</pre>
 </div>
 
 </div>
@@ -13976,7 +14011,7 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[308]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -14022,13 +14057,13 @@ memory usage: 17.7+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[309]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># histogram of p_diffs</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">p_diffs</span><span class="p">);</span>
 <span class="c1"># where the actual difference observed in **ab_data.csv** falls on null distribution</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">p_diff</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">calc_diff</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
 </pre></div>
 
 </div>
@@ -14049,90 +14084,90 @@ memory usage: 17.7+ MB
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,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
-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
+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
 "
 >
 </div>
@@ -14145,7 +14180,7 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[310]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># calculate mean of p_diffs</span>
@@ -14162,13 +14197,13 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[40]:</div>
+<div class="prompt output_prompt">Out[310]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>1.2938305887172679e-06</pre>
+<pre>1.1986005960708815e-05</pre>
 </div>
 
 </div>
@@ -14179,7 +14214,7 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[311]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># calculate variance of p_diffs</span>
@@ -14196,13 +14231,13 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[41]:</div>
+<div class="prompt output_prompt">Out[311]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>1.4665745839236438e-06</pre>
+<pre>1.4627533294231455e-06</pre>
 </div>
 
 </div>
@@ -14213,7 +14248,7 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[312]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># calculate standard deviation of p_diffs</span>
@@ -14230,13 +14265,13 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[42]:</div>
+<div class="prompt output_prompt">Out[312]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.0012110221236309616</pre>
+<pre>0.0012094433965354251</pre>
 </div>
 
 </div>
@@ -14265,11 +14300,12 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[313]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># calculate length of array where values greater than cutoff and divide by length of total array</span>
-<span class="n">prop_grthan_p_diffs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">p_diffs</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">p_diffs</span> <span class="o">&gt;</span> <span class="n">p_diff</span><span class="p">)])</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">p_diffs</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># calculate length of array where values greater than cutoff (from ab_data.csv, not from simulation)</span>
+<span class="c1"># and divide by length of total array</span>
+<span class="n">prop_grthan_p_diffs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">p_diffs</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">p_diffs</span> <span class="o">&gt;</span> <span class="n">calc_diff</span><span class="p">)])</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">p_diffs</span><span class="p">)</span>
 <span class="n">prop_grthan_p_diffs</span>
 </pre></div>
 
@@ -14283,13 +14319,13 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[43]:</div>
+<div class="prompt output_prompt">Out[313]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.9877</pre>
+<pre>0.9092</pre>
 </div>
 
 </div>
@@ -14312,7 +14348,7 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer to question k.</strong></p>
-<p><code>prop_grthan_p_diffs</code> is the <code>p-value</code>. This is the value that allows us to <em>reject</em> or <em>fail to reject</em> the null hypothesis depending on a pre-specified <code>significance level</code> (commonly called <code>alpha</code>). <code>alpha</code> is commonly set at <code>0.05</code> or 5%. For an <code>alpha</code> of <code>0.05</code> and the <code>p-value</code> in <strong>j. out</strong> (this value is dependant on simualation), we <em>fail to reject the null hypothesis</em> (because that value is <strong>greater than</strong> <code>alpha</code>).</p>
+<p><code>prop_grthan_p_diffs</code> is the <code>p-value</code>. This is the value that allows us to <em>reject</em> or <em>fail to reject</em> the null hypothesis depending on a pre-specified <code>significance level</code> (commonly called <code>alpha</code>). <code>alpha</code> is commonly set at <code>0.05</code> or 5%. For an <code>alpha</code> of <code>0.05</code> and the <code>p-value</code> in <strong>j. out</strong> (this value is dependant on simulation), we <em>fail to reject the null hypothesis</em> (because that value is <strong>greater than</strong> <code>alpha</code>).</p>
 <p>Here that means that:</p>
 <center>$H_{0}: p_{old}>=p_{new}$</center><p>is <code>True</code> and therefore the <code>new_page</code> does <strong>not</strong> lead to more conversions.</p>
 
@@ -14330,7 +14366,7 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[314]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -14346,7 +14382,7 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[44]:</div>
+<div class="prompt output_prompt">Out[314]:</div>
 
 
 
@@ -14422,7 +14458,7 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[315]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
@@ -14444,19 +14480,7 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/Users/geodev/anaconda3/lib/python3.6/site-packages/statsmodels/compat/pandas.py:56: FutureWarning: The pandas.core.datetools module is deprecated and will be removed in a future version. Please use the pandas.tseries module instead.
-  from pandas.core import datetools
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[45]:</div>
+<div class="prompt output_prompt">Out[315]:</div>
 
 
 
@@ -14491,7 +14515,7 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[316]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># from http://knowledgetack.com/python/statsmodels/proportions_ztest/</span>
@@ -14509,7 +14533,7 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[46]:</div>
+<div class="prompt output_prompt">Out[316]:</div>
 
 
 
@@ -14526,7 +14550,7 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[317]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># from http://knowledgetack.com/python/statsmodels/proportions_ztest/</span>
@@ -14547,7 +14571,7 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[47]:</div>
+<div class="prompt output_prompt">Out[317]:</div>
 
 
 
@@ -14599,12 +14623,11 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer to question a.</strong></p>
-<p>A Linear regression (<a href="https://www.analyticsvidhya.com/blog/2015/08/comprehensive-guide-regression/">source</a>):</p>
-<p>"Linear Regression establishes a relationship between <strong>dependent variable (Y)</strong> and one or more <strong>independent variables (X)</strong> using a <strong>best fit straight line</strong> (also known as regression line)."</p>
+<p>A Logistic Regression (<a href="https://www.analyticsvidhya.com/blog/2015/08/comprehensive-guide-regression/">source</a>):</p>
+<p>quoted from <strong>source</strong> above : "Logistic regression is used to find the probability of event=Success and event=Failure. We should use logistic regression when the dependent variable is binary (0/ 1, True/ False, Yes/ No) in nature."</p>
 <p>In our context:</p>
 <ul>
-<li>**dependent variable (Y)** = whether user converted or not</li>
-<li>**independent variables (X)** = one of [ group or another parameter to be defined ]</li>
+<li>'event=Success' and 'event=Failure' can be defined as 'user converts' and 'user does not convert'</li>
 </ul>
 </div>
 </div>
@@ -14620,7 +14643,7 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[318]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#df.head to minimize scrolling</span>
@@ -14637,7 +14660,7 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[48]:</div>
+<div class="prompt output_prompt">Out[318]:</div>
 
 
 
@@ -14713,7 +14736,7 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[319]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># add intercept and dummy column</span>
@@ -14733,7 +14756,7 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[49]:</div>
+<div class="prompt output_prompt">Out[319]:</div>
 
 
 
@@ -14850,14 +14873,36 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[320]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lm_control</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;converted&#39;</span><span class="p">],</span> <span class="n">df2</span><span class="p">[[</span><span class="s1">&#39;intercept&#39;</span><span class="p">,</span> <span class="s1">&#39;ab_page&#39;</span><span class="p">]])</span>
-<span class="n">results_control</span> <span class="o">=</span> <span class="n">lm_control</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># instantiate the model with &#39;intercept&#39; and &#39;ab_page&#39;</span>
+<span class="n">logit_control</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">Logit</span><span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;converted&#39;</span><span class="p">],</span> <span class="n">df2</span><span class="p">[[</span><span class="s1">&#39;intercept&#39;</span><span class="p">,</span> <span class="s1">&#39;ab_page&#39;</span><span class="p">]])</span>
+<span class="c1"># fit the model</span>
+<span class="n">result_control</span> <span class="o">=</span> <span class="n">logit_control</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Optimization terminated successfully.
+         Current function value: 0.366118
+         Iterations 6
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -14873,10 +14918,10 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[321]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">results_control</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result_control</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -14889,64 +14934,44 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[51]:</div>
+<div class="prompt output_prompt">Out[321]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <table class="simpletable">
-<caption>OLS Regression Results</caption>
+<caption>Logit Regression Results</caption>
 <tr>
-  <th>Dep. Variable:</th>        <td>converted</td>    <th>  R-squared:         </th> <td>   0.000</td> 
+  <th>Dep. Variable:</th>     <td>converted</td>    <th>  No. Observations:  </th>   <td>290584</td>   
 </tr>
 <tr>
-  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.000</td> 
+  <th>Model:</th>               <td>Logit</td>      <th>  Df Residuals:      </th>   <td>290582</td>   
 </tr>
 <tr>
-  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   1.719</td> 
+  <th>Method:</th>               <td>MLE</td>       <th>  Df Model:          </th>   <td>     1</td>   
 </tr>
 <tr>
-  <th>Date:</th>             <td>Mon, 12 Mar 2018</td> <th>  Prob (F-statistic):</th>  <td> 0.190</td>  
+  <th>Date:</th>          <td>Tue, 13 Mar 2018</td> <th>  Pseudo R-squ.:     </th>  <td>8.077e-06</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>19:08:41</td>     <th>  Log-Likelihood:    </th> <td> -85267.</td> 
+  <th>Time:</th>              <td>07:47:54</td>     <th>  Log-Likelihood:    </th> <td>-1.0639e+05</td>
 </tr>
 <tr>
-  <th>No. Observations:</th>      <td>290584</td>      <th>  AIC:               </th> <td>1.705e+05</td>
+  <th>converged:</th>           <td>True</td>       <th>  LL-Null:           </th> <td>-1.0639e+05</td>
 </tr>
 <tr>
-  <th>Df Residuals:</th>          <td>290582</td>      <th>  BIC:               </th> <td>1.706e+05</td>
-</tr>
-<tr>
-  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>     <td> </td>    
-</tr>
-<tr>
-  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>    
+  <th> </th>                      <td> </td>        <th>  LLR p-value:       </th>   <td>0.1899</td>   
 </tr>
 </table>
 <table class="simpletable">
 <tr>
-      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+      <td></td>         <th>coef</th>     <th>std err</th>      <th>z</th>      <th>P>|z|</th>  <th>[0.025</th>    <th>0.975]</th>  
 </tr>
 <tr>
-  <th>intercept</th> <td>    0.1204</td> <td>    0.001</td> <td>  141.407</td> <td> 0.000</td> <td>    0.119</td> <td>    0.122</td>
+  <th>intercept</th> <td>   -1.9888</td> <td>    0.008</td> <td> -246.669</td> <td> 0.000</td> <td>   -2.005</td> <td>   -1.973</td>
 </tr>
 <tr>
-  <th>ab_page</th>   <td>   -0.0016</td> <td>    0.001</td> <td>   -1.311</td> <td> 0.190</td> <td>   -0.004</td> <td>    0.001</td>
-</tr>
-</table>
-<table class="simpletable">
-<tr>
-  <th>Omnibus:</th>       <td>125553.456</td> <th>  Durbin-Watson:     </th>  <td>   1.995</td> 
-</tr>
-<tr>
-  <th>Prob(Omnibus):</th>   <td> 0.000</td>   <th>  Jarque-Bera (JB):  </th> <td>414313.355</td>
-</tr>
-<tr>
-  <th>Skew:</th>            <td> 2.345</td>   <th>  Prob(JB):          </th>  <td>    0.00</td> 
-</tr>
-<tr>
-  <th>Kurtosis:</th>        <td> 6.497</td>   <th>  Cond. No.          </th>  <td>    2.62</td> 
+  <th>ab_page</th>   <td>   -0.0150</td> <td>    0.011</td> <td>   -1.311</td> <td> 0.190</td> <td>   -0.037</td> <td>    0.007</td>
 </tr>
 </table>
 </div>
@@ -14974,8 +14999,8 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 <p>The <code>p-value</code> of <code>ab_pages</code> is <strong><code>0.190</code></strong>. It is actually close to what was found in <strong>Part II, Question m.</strong> . Like that answer however, it differs from what was found in <strong>Part II, Question j.</strong></p>
 <p>The null and alternative hypotheses were not set up in the same way, to begin with we said that:</p>
 <p>PART II:</p>
-<center>$H_{0}: p_{old}>=p_{new}$</center><center>$H_{1}: p_{old}<p_{new}$</center><p>Then in PART II/m and Part III we said that:</p>
-<center>$H_{0}: p_{old}=p_{new}$</center><center>$H_{1}: p_{old}\neq p_{new}$</center>
+<center>$H_{0}: p_{old} >= p_{new}$</center><center>$H_{1}: p_{old} < p_{new}$</center><p>Then in PART II/m and Part III we said that:</p>
+<center>$H_{0}: p_{old} = p_{new}$</center><center>$H_{1}: p_{old} \neq p_{new}$</center>
 </div>
 </div>
 </div>
@@ -15018,7 +15043,7 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[322]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">countries_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/countries.csv&#39;</span><span class="p">)</span>
@@ -15032,7 +15057,7 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[323]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_new</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -15048,7 +15073,7 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[53]:</div>
+<div class="prompt output_prompt">Out[323]:</div>
 
 
 
@@ -15168,7 +15193,7 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[324]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_new</span><span class="o">.</span><span class="n">country</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
@@ -15184,7 +15209,7 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[54]:</div>
+<div class="prompt output_prompt">Out[324]:</div>
 
 
 
@@ -15201,7 +15226,7 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[325]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Create the necessary dummy variables (list them in alphabetical order to get correct results)</span>
@@ -15219,7 +15244,7 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[55]:</div>
+<div class="prompt output_prompt">Out[325]:</div>
 
 
 
@@ -15370,15 +15395,15 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[326]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Fit Linear Model And Obtain the Results.</span>
-<span class="c1"># without using a country as a baseline as they do not influence each other</span>
-<span class="c1"># (a user cannot be from two different countries)</span>
-<span class="n">mlr</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">df_new</span><span class="p">[</span><span class="s1">&#39;converted&#39;</span><span class="p">],</span> <span class="n">df_new</span><span class="p">[[</span><span class="s1">&#39;intercept&#39;</span><span class="p">,</span> <span class="s1">&#39;ab_page&#39;</span><span class="p">,</span> <span class="s1">&#39;CA&#39;</span><span class="p">,</span> <span class="s1">&#39;UK&#39;</span><span class="p">,</span> <span class="s1">&#39;US&#39;</span><span class="p">]])</span>
-<span class="n">results</span> <span class="o">=</span> <span class="n">mlr</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="n">results</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create new intersection column for country and ab_page by multiplying relevant values (1s and 0s)</span>
+<span class="c1"># these new columns can then be used in model to determin whether a country has an impact on converion</span>
+<span class="n">df_new</span><span class="p">[</span><span class="s1">&#39;CA_int_ab_page&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_new</span><span class="p">[</span><span class="s1">&#39;CA&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df_new</span><span class="p">[</span><span class="s1">&#39;ab_page&#39;</span><span class="p">]</span>
+<span class="n">df_new</span><span class="p">[</span><span class="s1">&#39;UK_int_ab_page&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_new</span><span class="p">[</span><span class="s1">&#39;UK&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df_new</span><span class="p">[</span><span class="s1">&#39;ab_page&#39;</span><span class="p">]</span>
+<span class="n">df_new</span><span class="p">[</span><span class="s1">&#39;US_int_ab_page&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_new</span><span class="p">[</span><span class="s1">&#39;US&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df_new</span><span class="p">[</span><span class="s1">&#39;ab_page&#39;</span><span class="p">]</span>
+<span class="n">df_new</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -15391,73 +15416,402 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[75]:</div>
+<div class="prompt output_prompt">Out[326]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>timestamp</th>
+      <th>group</th>
+      <th>landing_page</th>
+      <th>converted</th>
+      <th>check</th>
+      <th>check1</th>
+      <th>intercept</th>
+      <th>ab_page</th>
+      <th>CA</th>
+      <th>UK</th>
+      <th>US</th>
+      <th>CA_int_ab_page</th>
+      <th>UK_int_ab_page</th>
+      <th>US_int_ab_page</th>
+    </tr>
+    <tr>
+      <th>user_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>834778</th>
+      <td>UK</td>
+      <td>2017-01-14 23:08:43.304998</td>
+      <td>control</td>
+      <td>old_page</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>928468</th>
+      <td>US</td>
+      <td>2017-01-23 14:44:16.387854</td>
+      <td>treatment</td>
+      <td>new_page</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>822059</th>
+      <td>UK</td>
+      <td>2017-01-16 14:04:14.719771</td>
+      <td>treatment</td>
+      <td>new_page</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>711597</th>
+      <td>UK</td>
+      <td>2017-01-22 03:14:24.763511</td>
+      <td>control</td>
+      <td>old_page</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>710616</th>
+      <td>UK</td>
+      <td>2017-01-16 13:14:44.000513</td>
+      <td>treatment</td>
+      <td>new_page</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[327]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Fit logistic model and obtain results</span>
+<span class="c1"># Without using a country as a baseline, in other words, a user cannot be from multiple countries</span>
+<span class="c1"># instantiate the model with &#39;intercept&#39;, &#39;ab_page&#39;, &#39;CA_int_ab_page&#39;, &#39;UK_int_ab_page&#39; and &#39;US_int_ab_page&#39;</span>
+<span class="n">logit_control_1</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">Logit</span><span class="p">(</span><span class="n">df_new</span><span class="p">[</span><span class="s1">&#39;converted&#39;</span><span class="p">],</span> <span class="n">df_new</span><span class="p">[[</span><span class="s1">&#39;intercept&#39;</span><span class="p">,</span> <span class="s1">&#39;ab_page&#39;</span><span class="p">,</span> <span class="s1">&#39;CA_int_ab_page&#39;</span><span class="p">,</span><span class="s1">&#39;UK_int_ab_page&#39;</span><span class="p">,</span> <span class="s1">&#39;US_int_ab_page&#39;</span><span class="p">]])</span>
+<span class="c1"># fit the model</span>
+<span class="n">result_control_1</span> <span class="o">=</span> <span class="n">logit_control_1</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Warning: Maximum number of iterations has been exceeded.
+         Current function value: 0.366109
+         Iterations: 35
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/Users/geodev/anaconda3/lib/python3.6/site-packages/statsmodels/base/model.py:496: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  &#34;Check mle_retvals&#34;, ConvergenceWarning)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[328]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># get summary output</span>
+<span class="n">result_control_1</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[328]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <table class="simpletable">
-<caption>OLS Regression Results</caption>
+<caption>Logit Regression Results</caption>
 <tr>
-  <th>Dep. Variable:</th>        <td>converted</td>    <th>  R-squared:         </th> <td>  -0.005</td> 
+  <th>Dep. Variable:</th>     <td>converted</td>    <th>  No. Observations:  </th>   <td>290584</td>   
 </tr>
 <tr>
-  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>  -0.005</td> 
+  <th>Model:</th>               <td>Logit</td>      <th>  Df Residuals:      </th>   <td>290580</td>   
 </tr>
 <tr>
-  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>  -385.3</td> 
+  <th>Method:</th>               <td>MLE</td>       <th>  Df Model:          </th>   <td>     3</td>   
 </tr>
 <tr>
-  <th>Date:</th>             <td>Mon, 12 Mar 2018</td> <th>  Prob (F-statistic):</th>  <td>  1.00</td>  
+  <th>Date:</th>          <td>Tue, 13 Mar 2018</td> <th>  Pseudo R-squ.:     </th>  <td>3.351e-05</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>20:00:02</td>     <th>  Log-Likelihood:    </th> <td> -86041.</td> 
+  <th>Time:</th>              <td>07:47:56</td>     <th>  Log-Likelihood:    </th> <td>-1.0639e+05</td>
 </tr>
 <tr>
-  <th>No. Observations:</th>      <td>290584</td>      <th>  AIC:               </th> <td>1.721e+05</td>
+  <th>converged:</th>           <td>False</td>      <th>  LL-Null:           </th> <td>-1.0639e+05</td>
 </tr>
 <tr>
-  <th>Df Residuals:</th>          <td>290579</td>      <th>  BIC:               </th> <td>1.721e+05</td>
-</tr>
-<tr>
-  <th>Df Model:</th>              <td>     4</td>      <th>                     </th>     <td> </td>    
-</tr>
-<tr>
-  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>    
+  <th> </th>                      <td> </td>        <th>  LLR p-value:       </th>   <td>0.06785</td>  
 </tr>
 </table>
 <table class="simpletable">
 <tr>
-      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+         <td></td>           <th>coef</th>     <th>std err</th>      <th>z</th>      <th>P>|z|</th>  <th>[0.025</th>    <th>0.975]</th>  
 </tr>
 <tr>
-  <th>intercept</th> <td> 5.323e+10</td> <td> 1.98e+10</td> <td>    2.683</td> <td> 0.007</td> <td> 1.43e+10</td> <td> 9.21e+10</td>
+  <th>intercept</th>      <td>   -1.9888</td> <td>    0.008</td> <td> -246.669</td> <td> 0.000</td> <td>   -2.005</td> <td>   -1.973</td>
 </tr>
 <tr>
-  <th>ab_page</th>   <td>   -0.0016</td> <td>    0.001</td> <td>   -1.343</td> <td> 0.179</td> <td>   -0.004</td> <td>    0.001</td>
+  <th>ab_page</th>        <td>   -0.0234</td> <td> 3.47e+05</td> <td>-6.76e-08</td> <td> 1.000</td> <td> -6.8e+05</td> <td>  6.8e+05</td>
 </tr>
 <tr>
-  <th>CA</th>        <td>-5.323e+10</td> <td> 1.98e+10</td> <td>   -2.683</td> <td> 0.007</td> <td>-9.21e+10</td> <td>-1.43e+10</td>
+  <th>CA_int_ab_page</th> <td>   -0.0592</td> <td> 3.47e+05</td> <td>-1.71e-07</td> <td> 1.000</td> <td> -6.8e+05</td> <td>  6.8e+05</td>
 </tr>
 <tr>
-  <th>UK</th>        <td>-5.323e+10</td> <td> 1.98e+10</td> <td>   -2.683</td> <td> 0.007</td> <td>-9.21e+10</td> <td>-1.43e+10</td>
+  <th>UK_int_ab_page</th> <td>    0.0308</td> <td> 3.47e+05</td> <td> 8.89e-08</td> <td> 1.000</td> <td> -6.8e+05</td> <td>  6.8e+05</td>
 </tr>
 <tr>
-  <th>US</th>        <td>-5.323e+10</td> <td> 1.98e+10</td> <td>   -2.683</td> <td> 0.007</td> <td>-9.21e+10</td> <td>-1.43e+10</td>
+  <th>US_int_ab_page</th> <td>    0.0052</td> <td> 3.47e+05</td> <td> 1.49e-08</td> <td> 1.000</td> <td> -6.8e+05</td> <td>  6.8e+05</td>
+</tr>
+</table>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Not setting an intersection of country and page as a baseline causes all p-values for the intersections to equal '1', let's now investigate the same set by setting a baseline for comparison.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[329]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Fit logistic model and obtain results</span>
+<span class="c1"># Using &#39;CA_int_ab_page&#39; as a baseline</span>
+<span class="c1"># instantiate the model with &#39;intercept&#39;, &#39;ab_page&#39;, &#39;UK_int_ab_page&#39; and &#39;US_int_ab_page&#39;</span>
+<span class="n">logit_control_2</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">Logit</span><span class="p">(</span><span class="n">df_new</span><span class="p">[</span><span class="s1">&#39;converted&#39;</span><span class="p">],</span> <span class="n">df_new</span><span class="p">[[</span><span class="s1">&#39;intercept&#39;</span><span class="p">,</span> <span class="s1">&#39;ab_page&#39;</span><span class="p">,</span><span class="s1">&#39;UK_int_ab_page&#39;</span><span class="p">,</span> <span class="s1">&#39;US_int_ab_page&#39;</span><span class="p">]])</span>
+<span class="c1"># fit the model</span>
+<span class="n">result_control_2</span> <span class="o">=</span> <span class="n">logit_control_2</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Optimization terminated successfully.
+         Current function value: 0.366109
+         Iterations 6
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[330]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># get summary output</span>
+<span class="n">result_control_2</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[330]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table class="simpletable">
+<caption>Logit Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>     <td>converted</td>    <th>  No. Observations:  </th>   <td>290584</td>   
+</tr>
+<tr>
+  <th>Model:</th>               <td>Logit</td>      <th>  Df Residuals:      </th>   <td>290580</td>   
+</tr>
+<tr>
+  <th>Method:</th>               <td>MLE</td>       <th>  Df Model:          </th>   <td>     3</td>   
+</tr>
+<tr>
+  <th>Date:</th>          <td>Tue, 13 Mar 2018</td> <th>  Pseudo R-squ.:     </th>  <td>3.351e-05</td> 
+</tr>
+<tr>
+  <th>Time:</th>              <td>07:47:56</td>     <th>  Log-Likelihood:    </th> <td>-1.0639e+05</td>
+</tr>
+<tr>
+  <th>converged:</th>           <td>True</td>       <th>  LL-Null:           </th> <td>-1.0639e+05</td>
+</tr>
+<tr>
+  <th> </th>                      <td> </td>        <th>  LLR p-value:       </th>   <td>0.06785</td>  
 </tr>
 </table>
 <table class="simpletable">
 <tr>
-  <th>Omnibus:</th>       <td>125367.595</td> <th>  Durbin-Watson:     </th>  <td>   1.987</td> 
+         <td></td>           <th>coef</th>     <th>std err</th>      <th>z</th>      <th>P>|z|</th>  <th>[0.025</th>    <th>0.975]</th>  
 </tr>
 <tr>
-  <th>Prob(Omnibus):</th>   <td> 0.000</td>   <th>  Jarque-Bera (JB):  </th> <td>413056.059</td>
+  <th>intercept</th>      <td>   -1.9888</td> <td>    0.008</td> <td> -246.669</td> <td> 0.000</td> <td>   -2.005</td> <td>   -1.973</td>
 </tr>
 <tr>
-  <th>Skew:</th>            <td> 2.341</td>   <th>  Prob(JB):          </th>  <td>    0.00</td> 
+  <th>ab_page</th>        <td>   -0.0827</td> <td>    0.038</td> <td>   -2.176</td> <td> 0.030</td> <td>   -0.157</td> <td>   -0.008</td>
 </tr>
 <tr>
-  <th>Kurtosis:</th>        <td> 6.491</td>   <th>  Cond. No.          </th>  <td>9.01e+13</td> 
+  <th>UK_int_ab_page</th> <td>    0.0901</td> <td>    0.040</td> <td>    2.225</td> <td> 0.026</td> <td>    0.011</td> <td>    0.169</td>
+</tr>
+<tr>
+  <th>US_int_ab_page</th> <td>    0.0644</td> <td>    0.038</td> <td>    1.679</td> <td> 0.093</td> <td>   -0.011</td> <td>    0.140</td>
 </tr>
 </table>
 </div>
@@ -15473,10 +15827,196 @@ pE4ZAJLUKQNAkjr1/wC60KwV3aAaQAAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer to question k.</strong></p>
-<p>We find that the <code>p-values</code> for CA, the UK and the US are <code>0.007</code>, for a confidence level of <code>0.95</code> (which is <code>1 - alpha</code> where the <code>alpha</code> value is <code>0.05</code>), this means that we <strong>reject the null hypothesis</strong> as these values are <strong>smaller than</strong> the threshold <code>alpha</code>. Here this means that the country of origin ('CA', 'UK', 'US') <strong>does</strong> have a significant effect on conversion.</p>
+<p>We find that the <code>p-values</code> for the intersection of UK and US with ab_page are <code>0.026</code> and <code>0.093</code>. For a confidence level of <code>0.95</code> (which is <code>1 - alpha</code> where the <code>alpha</code> value is <code>0.05</code>) and using 'CA' as a baseline, this means that we <strong>reject the null hypothesis</strong> as the UK value is <strong>smaller than</strong> the threshold <code>alpha</code>. Here this means that the country of origin ('UK') <strong>does</strong> have a significant effect on conversion.</p>
+<p>Using a different country as a baseline ('UK', 'US') shows the same behaviour, only the 'US' never causes us to reject the null hypothesis. This is shown in the two cells below.</p>
+<p>The overall conclusion is that the country of origin does have an impact on conversion, and therefore one strategy might be to build targeted pages for each country.</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[332]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Fit logistic model and obtain results</span>
+<span class="c1"># Using &#39;UK_int_ab_page&#39; as a baseline</span>
+<span class="c1"># instantiate the model with &#39;intercept&#39;, &#39;ab_page&#39;, &#39;UK_int_ab_page&#39; and &#39;US_int_ab_page&#39;</span>
+<span class="n">logit_control_3</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">Logit</span><span class="p">(</span><span class="n">df_new</span><span class="p">[</span><span class="s1">&#39;converted&#39;</span><span class="p">],</span> <span class="n">df_new</span><span class="p">[[</span><span class="s1">&#39;intercept&#39;</span><span class="p">,</span> <span class="s1">&#39;ab_page&#39;</span><span class="p">,</span><span class="s1">&#39;CA_int_ab_page&#39;</span><span class="p">,</span> <span class="s1">&#39;US_int_ab_page&#39;</span><span class="p">]])</span>
+<span class="c1"># fit the model</span>
+<span class="n">result_control_3</span> <span class="o">=</span> <span class="n">logit_control_3</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="c1"># get summary output</span>
+<span class="n">result_control_3</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Optimization terminated successfully.
+         Current function value: 0.366109
+         Iterations 6
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[332]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table class="simpletable">
+<caption>Logit Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>     <td>converted</td>    <th>  No. Observations:  </th>   <td>290584</td>   
+</tr>
+<tr>
+  <th>Model:</th>               <td>Logit</td>      <th>  Df Residuals:      </th>   <td>290580</td>   
+</tr>
+<tr>
+  <th>Method:</th>               <td>MLE</td>       <th>  Df Model:          </th>   <td>     3</td>   
+</tr>
+<tr>
+  <th>Date:</th>          <td>Tue, 13 Mar 2018</td> <th>  Pseudo R-squ.:     </th>  <td>3.351e-05</td> 
+</tr>
+<tr>
+  <th>Time:</th>              <td>07:48:31</td>     <th>  Log-Likelihood:    </th> <td>-1.0639e+05</td>
+</tr>
+<tr>
+  <th>converged:</th>           <td>True</td>       <th>  LL-Null:           </th> <td>-1.0639e+05</td>
+</tr>
+<tr>
+  <th> </th>                      <td> </td>        <th>  LLR p-value:       </th>   <td>0.06785</td>  
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+         <td></td>           <th>coef</th>     <th>std err</th>      <th>z</th>      <th>P>|z|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>intercept</th>      <td>   -1.9888</td> <td>    0.008</td> <td> -246.669</td> <td> 0.000</td> <td>   -2.005</td> <td>   -1.973</td>
+</tr>
+<tr>
+  <th>ab_page</th>        <td>    0.0074</td> <td>    0.018</td> <td>    0.410</td> <td> 0.682</td> <td>   -0.028</td> <td>    0.043</td>
+</tr>
+<tr>
+  <th>CA_int_ab_page</th> <td>   -0.0901</td> <td>    0.040</td> <td>   -2.225</td> <td> 0.026</td> <td>   -0.169</td> <td>   -0.011</td>
+</tr>
+<tr>
+  <th>US_int_ab_page</th> <td>   -0.0257</td> <td>    0.019</td> <td>   -1.363</td> <td> 0.173</td> <td>   -0.063</td> <td>    0.011</td>
+</tr>
+</table>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[334]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Fit logistic model and obtain results</span>
+<span class="c1"># Using &#39;US_int_ab_page&#39; as a baseline</span>
+<span class="c1"># instantiate the model with &#39;intercept&#39;, &#39;ab_page&#39;, &#39;UK_int_ab_page&#39; and &#39;US_int_ab_page&#39;</span>
+<span class="n">logit_control_4</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">Logit</span><span class="p">(</span><span class="n">df_new</span><span class="p">[</span><span class="s1">&#39;converted&#39;</span><span class="p">],</span> <span class="n">df_new</span><span class="p">[[</span><span class="s1">&#39;intercept&#39;</span><span class="p">,</span> <span class="s1">&#39;ab_page&#39;</span><span class="p">,</span><span class="s1">&#39;CA_int_ab_page&#39;</span><span class="p">,</span> <span class="s1">&#39;UK_int_ab_page&#39;</span><span class="p">]])</span>
+<span class="c1"># fit the model</span>
+<span class="n">result_control_4</span> <span class="o">=</span> <span class="n">logit_control_4</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="c1"># get summary output</span>
+<span class="n">result_control_4</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Optimization terminated successfully.
+         Current function value: 0.366109
+         Iterations 6
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[334]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table class="simpletable">
+<caption>Logit Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>     <td>converted</td>    <th>  No. Observations:  </th>   <td>290584</td>   
+</tr>
+<tr>
+  <th>Model:</th>               <td>Logit</td>      <th>  Df Residuals:      </th>   <td>290580</td>   
+</tr>
+<tr>
+  <th>Method:</th>               <td>MLE</td>       <th>  Df Model:          </th>   <td>     3</td>   
+</tr>
+<tr>
+  <th>Date:</th>          <td>Tue, 13 Mar 2018</td> <th>  Pseudo R-squ.:     </th>  <td>3.351e-05</td> 
+</tr>
+<tr>
+  <th>Time:</th>              <td>07:50:39</td>     <th>  Log-Likelihood:    </th> <td>-1.0639e+05</td>
+</tr>
+<tr>
+  <th>converged:</th>           <td>True</td>       <th>  LL-Null:           </th> <td>-1.0639e+05</td>
+</tr>
+<tr>
+  <th> </th>                      <td> </td>        <th>  LLR p-value:       </th>   <td>0.06785</td>  
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+         <td></td>           <th>coef</th>     <th>std err</th>      <th>z</th>      <th>P>|z|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>intercept</th>      <td>   -1.9888</td> <td>    0.008</td> <td> -246.669</td> <td> 0.000</td> <td>   -2.005</td> <td>   -1.973</td>
+</tr>
+<tr>
+  <th>ab_page</th>        <td>   -0.0183</td> <td>    0.013</td> <td>   -1.449</td> <td> 0.147</td> <td>   -0.043</td> <td>    0.006</td>
+</tr>
+<tr>
+  <th>CA_int_ab_page</th> <td>   -0.0644</td> <td>    0.038</td> <td>   -1.679</td> <td> 0.093</td> <td>   -0.140</td> <td>    0.011</td>
+</tr>
+<tr>
+  <th>UK_int_ab_page</th> <td>    0.0257</td> <td>    0.019</td> <td>    1.363</td> <td> 0.173</td> <td>   -0.011</td> <td>    0.063</td>
+</tr>
+</table>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
