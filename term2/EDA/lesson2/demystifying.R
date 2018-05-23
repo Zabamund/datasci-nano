@@ -55,7 +55,7 @@ numbers
 udacious <- c("Chris Saden", "Lauren Castellano",
               "Sarah Spikes","Dean Eckles",
               "Andy Brown", "Moira Burke",
-              "Kunal Chawla", YOUR_NAME)
+              "Kunal Chawla", 'Arthur Dent')
 
 # Notice how R updates 'udacious' in the workspace.
 # It should now say something like 'chr[1:8]'.
@@ -144,6 +144,7 @@ data(mtcars)
 # need to the info on Promise objects to be successful in this course.
 
 names(mtcars)
+row.names(mtcars)
 
 # names(mtcars) should output all the variable
 # names in the data set. You might notice that the car names
@@ -166,6 +167,7 @@ names(mtcars)
 # 8. To print out the data, run this next line as code.
 
 mtcars
+nrow(mtcars)
 
 # Scroll up and down in the console to check out the data.
 # This is the entire data frame printed out.
@@ -235,7 +237,7 @@ tail(mtcars, 3)
 # using '?' before the command, much like you did to learn about
 # the mtcars data set and the row.names
 
-
+?c()
 
 # 12. Let's examine our car data more closely. We can access an
 # an individual variable (or column) from the data frame using
@@ -246,7 +248,8 @@ mtcars$mpg
 
 # Print out any two other variables to the console.
 
-
+mtcars$gear
+mtcars$cyl
 
 # This is a vector containing the mpg (miles per gallon) of
 # the 32 cars. Run this next line of code to get the average mpg for

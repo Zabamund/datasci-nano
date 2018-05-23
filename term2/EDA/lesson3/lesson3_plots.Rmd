@@ -1,0 +1,212 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Lesson 3
+
+-----
+
+# read in data
+
+```{r}
+getwd()
+list.files()
+pf <- read.csv('pseudo_facebook.tsv', sep = '\t')
+names(pf)
+```
+
+# histogram of birthdays
+```{r}
+install.packages('ggplot2')
+library(ggplot2)
+
+#get column names
+names(pf)
+summary(pf)
+str(pf)
+# use qplot to see data
+qplot(x = dob_day, data = pf) +
+  scale_x_continuous(breaks=1:31) +
+  facet_wrap(~dob_month, ncol=3)
+```
+
+# histogram of friend count
+```{r}
+names(pf)
+#qplot(x = friend_count, data = pf, xlim = c(0,1000))
+
+#alternative method to change axis
+qplot(x = friend_count, data = subset(pf, !is.na(gender)), binwidth = 25) +
+  scale_x_continuous(limits = c(0,1000), breaks = seq(0, 1000, 50)) +
+  facet_wrap(~gender,ncol = 2)
+```
+
+#stats by gender
+```{r}
+table(pf$gender)
+by(pf$friend_count, pf$gender, summary)
+```
+
+# Tenure
+```{r}
+qplot(x = tenure, data = pf, binwidth = 30,
+      color = I('black'),fill = I('#099DD9'))
+```
+# Tenure in years
+```{r}
+str(pf)
+qplot(x = tenure/365, data = pf, binwidth = 1,
+      xlab="number of years wasted on facebook",
+      ylab="number of fools wasting time on facebook",
+      color = I('black'),fill = I('#099DD9'))
+```
+# alternative tenure in years
+```{r}
+ggplot(aes(x = tenure/365), data = pf,) +
+  geom_histogram(binwidth = .25, color = 'black', fill = '#F79420') +
+  scale_x_continuous(limits = c(0,7), breaks = seq(0, 7, 1))
+```
+
+# ages investigation
+```{r}
+ggplot(aes(x = age), data = pf) +
+  geom_histogram(binwidth = 1, color = 'black', fill = 'green') +
+  scale_x_continuous(limits = c(0,120), breaks = seq(0,120,5)) + 
+  labs(x = "Age (years)", y = "nb of users")
+```
+
+# Transforming data
+```{r}
+qplot(x = friend_count, data = pf)
+summary(pf$friend_count)
+summary(log10(pf$friend_count + 1))
+summary(sqrt(pf$friend_count))
+```
+
+# Transformating data and plotting multiple plots
+```{r}
+install.packages("gridExtra")
+library(gridExtra)
+```
+
+```{r}
+# define individual plots
+p1 = ggplot(aes(x = friend_count), data = pf) +
+  geom_histogram(binwidth = 1, color = 'black', fill = 'red') +
+  scale_x_continuous(limits = c(0,5000), breaks = seq(0,5000,500)) #+ 
+  #labs(x = "friend_count linear", y = "nb of users")
+p2 = ggplot(aes(x = log10(friend_count + 1)), data = pf) +
+  geom_histogram(color = 'black', fill = 'green') +
+  scale_x_continuous(limits = c(0,5)) #+ 
+  #labs(x = "friend_count", y = "log10 nb of users")
+p3 = ggplot(aes(x = sqrt(friend_count)), data = pf) +
+  geom_histogram(binwidth = 1, color = 'black', fill = 'blue') +
+  scale_x_continuous(limits = c(0,120), breaks = seq(0,120,5)) #+ 
+  #labs(x = "sqrt friend_count", y = "nb of users")
+# arrange plots in grid
+grid.arrange(p1, p2, p3, ncol=1)
+```
+
+# Solution
+```{r}
+p1 <- qplot(x = friend_count, data = pf)
+p2 <- qplot(x = log10(friend_count + 1), data = pf)
+p3 <- qplot(x = sqrt(friend_count), data = pf)
+
+grid.arrange(p1, p2, p3, ncol=1)
+```
+
+# Solution 2
+```{r}
+p1 <- ggplot(aes(x = friend_count), data = pf) + geom_histogram()
+p2 <- p1 + scale_x_log10()
+p3 <- p1 + scale_x_sqrt()
+grid.arrange(p1, p2, p3, ncol=1)
+```
+
+# scaling layer solution
+```{r}
+logScale <- ggplot(aes(x = log10(friend_count + 1)), data = pf) + geom_histogram()
+countScale <- ggplot(aes(x = friend_count), data = pf) +
+  geom_histogram() +
+  scale_x_log10()
+grid.arrange(logScale, countScale, ncol=2)
+```
+
+# frequency polygons starting histograms
+```{r}
+qplot(x = friend_count, data = subset(pf, !is.na(gender)), binwidth=10) +
+  scale_x_continuous(limits = c(0,1000), breaks = seq(0,1000,50)) +
+  facet_wrap(~gender)
+```
+
+# frequency polygons
+```{r}
+qplot(x = friend_count, data = subset(pf, !is.na(gender)),
+      binwidth=10,
+      geom = 'freqpoly',
+      color = gender) +
+  scale_x_continuous(limits = c(0,1000), breaks = seq(0,1000,50))
+```
+
+# frequency polygons with changed y-axis
+```{r}
+qplot(x = friend_count, y = ..count../sum(..count..),
+      data = subset(pf, !is.na(gender)),
+      xlab = 'Friend count',
+      ylab = 'Proportion of users with given friend count',
+      binwidth=10,
+      geom = 'freqpoly',
+      color = gender) +
+  scale_x_continuous(limits = c(0,1000), breaks = seq(0,1000,50))
+```
+
+# frequency polygons of www_likes
+```{r}
+qplot(x = www_likes, y = ..count../sum(..count..),
+      data = subset(pf, !is.na(gender)),
+      xlab = 'www_likes',
+      ylab = 'Proportion of users with given www_likes',
+      geom = 'freqpoly',
+      color = gender) +
+  scale_x_continuous() +
+  scale_x_log10()
+```
+
+# count of likes for m and f
+```{r}
+by(pf$www_likes, pf$gender, sum)
+```
+
+# Boxplot
+```{r}
+qplot(x = gender, y = friend_count, 
+      data = subset(pf, !is.na(gender)), 
+      geom = 'boxplot') +
+  scale_y_continuous(limits = c(0,1000), breaks = seq(0,1000,50)) #+
+  #scale_y_log10()
+```
+
+# Boxplot solution 1 !! ylim trims data and so changes boxplot
+```{r}
+qplot(x = gender, y = friend_count, 
+      data = subset(pf, !is.na(gender)), 
+      geom = 'boxplot', ylim = c(0,1000))
+```
+
+# Boxplot solution 2 !! as above
+```{r}
+qplot(x = gender, y = friend_count, 
+      data = subset(pf, !is.na(gender)), 
+      geom = 'boxplot') +
+  scale_y_continuous(limits = c(0,1000))
+```
+
+# Boxplot solution 3 - no trim to data
+```{r}
+qplot(x = gender, y = friend_count, 
+      data = subset(pf, !is.na(gender)), 
+      geom = 'boxplot') +
+  coord_cartesian(ylim = c(0,1000))
+```
