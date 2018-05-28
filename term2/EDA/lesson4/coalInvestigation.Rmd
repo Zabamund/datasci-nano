@@ -1,0 +1,119 @@
+---
+title: "coalInvestigation"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Quicklook on Coal consumption, per person from:
+# [gapminder](https://www.gapminder.org/data/)
+
+# check working directory
+```{r}
+getwd()
+setwd("/Users/geodev/code/daan-nano/term2/EDA/lesson4/")
+list.files()
+```
+
+# import packages
+```{r}
+install.packages("tidyr")
+```
+```{r}
+install.packages("dplyr")
+```
+
+# read libraries
+```{r}
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+library(readxl)
+library(gridExtra)
+library(grid)
+```
+
+# read data into dataframe
+```{r}
+# define path name
+fileName <- "CoalComsumptionPerCapita.xlsx"
+coal_raw <- read_xlsx(fileName)
+```
+
+# remove rows with all NA values
+```{r}
+rowSums(is.na(coal_raw))
+ncol(coal_raw)
+coal_clean <- coal_raw[rowSums(is.na(coal_raw)) != (ncol(coal_raw) - 1),]
+```
+
+# check data set
+```{r}
+#summary(coal_clean)
+str(coal_clean)
+```
+
+# years as integers
+```{r}
+#as.integer(x)
+names(coal_clean)[-1] <- as.integer(names(coal_clean)[-1])
+```
+
+# rename first column
+```{r}
+colnames(coal_clean)[1] <- "country"
+```
+
+# gather() data
+```{r}
+# "Coal Consumption per person (tonnes oil equivalent)"
+coal_clean <- gather(coal_clean, key = "year", value = "Coal_Consumption", 2:48)
+```
+
+# remove special characters
+```{r}
+coal_clean$country <- gsub(' ', '_', coal_clean$country)
+coal_clean$country <- gsub(',', '', coal_clean$country)
+```
+
+# drop rows with na method
+```{r}
+# check if row has na
+row_has_na <- apply(coal_clean, 1, function(x){any(is.na(x))})
+# count rows with na
+sum(row_has_na)
+# drop rows with na
+coal_clean <- coal_clean[!row_has_na,]
+```
+
+# plot series 1 - simple histograms: these are not very legible
+```{r}
+# create plots
+yr_plot <- ggplot(coal_clean, mapping = aes(coal_clean$Coal_Consumption, color=year)) +
+  geom_histogram() +
+  #geom_freqpoly(binwidth = 0.05) +
+  labs(x = "Coal Consumption per person (tonnes oil equivalent)", y = "person count", title="Histogram of Coal Consumption per person and per country")
+
+country_plot <- ggplot(coal_clean, mapping = aes(coal_clean$Coal_Consumption, color=country)) +
+  geom_histogram() +
+  labs(x = "Coal Consumption per person (tonnes oil equivalent)", y = "person count",title="Histogram of Coal Consumption per person and per country")
+
+# arrange plots in grid
+grid.arrange(yr_plot, country_plot, ncol=1)
+```
+
+# plot series 2 - boxplot
+```{r}
+# create plots
+plot1 <- ggplot(coal_clean, aes(coal_clean$year, coal_clean$Coal_Consumption)) +
+  geom_boxplot() +
+  labs(x="year", y="Coal Consumption per person (tonnes oil equivalent)", title="Boxplots of Coal consumption vs Time")
+
+# reorder boxplot by median THANKS AND CREDIT TO @Winston on http://bit.ly/2GMZAq8
+plot2 <- ggplot(coal_clean, aes(x=reorder(coal_clean$country, coal_clean$Coal_Consumption, FUN = median), coal_clean$Coal_Consumption)) +
+  geom_boxplot() +
+  labs(x="Country", y="Coal Consumption per person (tonnes oil equivalent)", title="Boxplots of Coal consumption by country") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+# arrange plots in grid
+grid.arrange(plot1, plot2, ncol=1)
+```

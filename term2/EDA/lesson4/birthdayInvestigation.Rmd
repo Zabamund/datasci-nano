@@ -1,0 +1,144 @@
+---
+title: "Birthday_investigation"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# check working directory
+```{r}
+getwd()
+setwd("/Users/geodev/code/daan-nano/term2/EDA/lesson4/")
+list.files()
+```
+
+# import packages
+```{r}
+install.packages("tidyr")
+```
+
+```{r}
+install.packages("dplyr")
+```
+
+```{r}
+install.packages("lubridate")
+```
+
+# read libraries
+```{r}
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+library(lubridate)
+```
+
+# read data into dataframe
+```{r}
+# define path name
+inputFileName <- "birthdaysExample.csv"
+bdays_raw <- read.csv(inputFileName)
+head(bdays_raw)
+```
+
+# data quicklook
+```{r}
+str(bdays_raw)
+names(bdays_raw)
+typeof(bdays_raw)
+```
+
+# convert strings to datetime
+```{r}
+#bdays_edt <- cbind(bdays_raw, datesFormatted = as.Date(bdays_raw$dates, "%m/%d/%Y"))
+bdays_edt <- cbind(bdays_raw, datesFormatted = as.POSIXct(bdays_raw$dates, tz="", format="%m/%d/%Y"))
+str(bdays_edt)
+```
+
+# create by_week values
+```{r}
+date_by_week = floor_date(bdays_edt$datesFormatted, unit="week")
+```
+
+# add date_by_week values to df
+```{r}
+bdays_edt <- cbind(bdays_edt, date_by_week = date_by_week)
+```
+
+# count by week
+```{r}
+bdays_per_week <- count(bdays_edt, vars=date_by_week)
+bdays_per_week
+```
+
+# create dates_by_month values
+```{r}
+date_by_month = floor_date(bdays_edt$datesFormatted, unit = "month")
+```
+
+# add date_by_month values to df
+```{r}
+bdays_edt <- cbind(bdays_edt, date_by_month =date_by_month)
+```
+
+# count by month
+```{r}
+bdays_per_month <- count(bdays_edt, vars=date_by_month)
+```
+
+# create dates_by_day values
+```{r}
+date_by_day = floor_date(bdays_edt$datesFormatted, unit = "day")
+```
+
+# add date_by_day values to df
+```{r}
+bdays_edt <- cbind(bdays_edt, date_by_day =date_by_day)
+```
+
+# count by day
+```{r}
+bdays_per_day <- count(bdays_edt, vars=date_by_day)
+```
+
+# max values
+```{r}
+max(bdays_per_day$n)
+which.max(bdays_per_day$n)
+max(bdays_per_week$n)
+which.max(bdays_per_week$n)
+max(bdays_per_month$n)
+which.max(bdays_per_month$n)
+```
+
+# count bdays
+```{r}
+count(bdays_edt)
+```
+
+# count events on given day
+```{r}
+sum(bdays_edt$datesFormatted == "0014-01-07")
+```
+
+# plot series 1 - simple histograms:
+```{r}
+# create plots
+plot1 <- ggplot(bdays_edt, mapping = aes(bdays_edt$datesFormatted)) +
+  geom_histogram() +
+  #geom_freqpoly(binwidth = 0.05) +
+  labs(x = "date", y = "number of birthdays", title="Histogram number of birthdays vs time")
+
+plot2 <- ggplot(bdays_edt, mapping = aes(bdays_edt$date_by_month)) +
+  geom_histogram() +
+  #geom_freqpoly(binwidth = 0.05) +
+  labs(x = "date", y = "number of birthdays", title="Histogram number of birthdays vs month")
+
+plot3 <- ggplot(bdays_edt, mapping = aes(bdays_edt$date_by_week)) +
+  geom_histogram() +
+  #geom_freqpoly(binwidth = 0.05) +
+  labs(x = "date", y = "number of birthdays", title="Histogram number of birthdays vs week")
+
+# arrange plots in grid
+grid.arrange(plot1, plot2, plot3, ncol=1)
+```
