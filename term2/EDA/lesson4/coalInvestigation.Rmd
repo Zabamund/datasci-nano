@@ -86,6 +86,15 @@ sum(row_has_na)
 coal_clean <- coal_clean[!row_has_na,]
 ```
 
+# set year as number
+```{r}
+#as.integer(x)
+names(coal_clean)[2]
+names(coal_clean)[2] <- as.integer(names(coal_clean)[2])
+str(coal_clean)
+```
+
+
 # plot series 1 - simple histograms: these are not very legible
 ```{r}
 # create plots
@@ -117,3 +126,43 @@ plot2 <- ggplot(coal_clean, aes(x=reorder(coal_clean$country, coal_clean$Coal_Co
 # arrange plots in grid
 grid.arrange(plot1, plot2, ncol=1)
 ```
+
+# scatter plot: compare two countries based on their boxplots and geographical ties
+# using this link:
+# [carbonbrief.org](http://bit.ly/2LCPD2g)
+# Indonesia is one of the World's top coal exporters and India is a large consumer of indonesian coal
+# test1
+```{r}
+ccVSyr <- ggplot(aes(x = year, y = Coal_Consumption), data = coal_clean) + 
+  geom_point()
+ccVSctr <- ggplot(aes(x = country, y = Coal_Consumption), data = coal_clean) + 
+  geom_point()
+grid.arrange(ccVSyr, ccVSctr, ncol= 1)
+```
+
+# test2
+```{r}
+ggplot(data = subset(coal_clean, coal_clean$country == 'Indonesia' | coal_clean$country == 'India'), aes(x = year, y = Coal_Consumption)) + 
+  geom_point()
+```
+
+# coal_clean$year as numeric
+```{r}
+coal_clean$year <- as.integer(coal_clean$year)
+typeof(coal_clean$year)
+```
+
+# correlations
+```{r}
+year_CC_correl_indonesia <- with(subset(coal_clean, coal_clean$country == "Indonesia"), cor.test(year, Coal_Consumption, method = 'pearson'))
+year_CC_correl_indonesia
+
+year_CC_correl_india <- with(subset(coal_clean, coal_clean$country == "India"), cor.test(year, Coal_Consumption, method = 'pearson'))
+year_CC_correl_india
+```
+
+# scatter plot
+```{r}
+# use two dataframes to compare two variables. most of them contain only one variable.
+```
+
