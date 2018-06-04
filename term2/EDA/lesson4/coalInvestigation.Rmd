@@ -163,6 +163,62 @@ year_CC_correl_india
 
 # scatter plot
 ```{r}
-ggplot(data = subset(coal_clean, coal_clean$country == 'Indonesia' | coal_clean$country == 'India'), aes(x = year, y = Coal_Consumption)) + 
+ggplot(data = subset(coal_clean, coal_clean$country == 'Indonesia' | coal_clean$country == 'India'), aes(x = country, y = Coal_Consumption)) + 
   geom_point()
 ```
+
+# clean data for 2 variable plots
+# remove rows with all NA values
+```{r}
+rowSums(is.na(coal_raw))
+ncol(coal_raw)
+coal_clean2 <- coal_raw[rowSums(is.na(coal_raw)) != (ncol(coal_raw) - 1),]
+```
+# years as integers
+```{r}
+names(coal_clean2)[-1] <- as.integer(names(coal_clean2)[-1])
+```
+# rename first column
+```{r}
+colnames(coal_clean2)[1] <- "country"
+```
+
+# scatter plot
+```{r}
+yrPlot1 <- ggplot(data = coal_clean2, aes(x = coal_clean2$`1965`, y = coal_clean2$`1966`, colour=country)) + 
+  geom_point() +
+  labs(title="Year on year consumption", x=1965, y=1966)
+
+yrPlot2 <- ggplot(data = coal_clean2, aes(x = coal_clean2$`1966`, y = coal_clean2$`1990`, colour=country)) + 
+  geom_point() +
+  labs(title="Year on year consumption", x=2010, y=2011)
+
+grid.arrange(yrPlot1, yrPlot2, ncol=1)
+```
+
+# Consumption By Year
+```{r}
+consumptionByYear <- coal_clean %>% 
+  group_by(year) %>% 
+  summarise(mean_cons = mean(Coal_Consumption),
+            median_cons = median(Coal_Consumption),
+            min_cons = min(Coal_Consumption),
+            max_cons = max(Coal_Consumption),
+            n = n())
+
+tail(consumptionByYear)
+```
+
+# bar charts
+```{r}
+p_mc_1 <- ggplot() +
+  geom_line(data = consumptionByYear, aes(x = year, y = mean_cons), color = 'red') +
+  geom_line(data = consumptionByYear, aes(x = year, y = median_cons), color = 'green') + 
+  geom_line(data = consumptionByYear, aes(x = year, y = min_cons), color = 'blue') +
+  geom_line(data = consumptionByYear, aes(x = year, y = max_cons), color = 'black') +
+  ylab('Coal_consumption')
+
+grid.arrange(p_mc_1, ncol = 1)
+```
+
+
