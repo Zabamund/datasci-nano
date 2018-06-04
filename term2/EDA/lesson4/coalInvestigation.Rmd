@@ -163,6 +163,6 @@ year_CC_correl_india
 
 # scatter plot
 ```{r}
-# use two dataframes to compare two variables. most of them contain only one variable.
+ggplot(data = subset(coal_clean, coal_clean$country == 'Indonesia' | coal_clean$country == 'India'), aes(x = year, y = Coal_Consumption)) + 
+  geom_point()
 ```
-
