@@ -56,6 +56,15 @@ ggplot(data = subset(diamonds, (volume > 0 & volume <= quantile(volume, .99))), 
 
 ### Price and Carat Relationship
 Response:
+```{r}
+#str(diamonds)
+ggplot(data = diamonds, aes(x = cut, y = price/carat, color = color)) + 
+  geom_point() +
+  scale_color_brewer(type = 'div') +
+  geom_jitter(width = .4, height = 0) +
+  facet_wrap(~clarity)
+```
+
 
 ***
 

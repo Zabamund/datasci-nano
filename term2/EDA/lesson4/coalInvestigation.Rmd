@@ -221,4 +221,3 @@ p_mc_1 <- ggplot() +
 grid.arrange(p_mc_1, ncol = 1)
 ```
 
-
