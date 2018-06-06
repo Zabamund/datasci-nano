@@ -46,3 +46,85 @@ summary(wd_raw)
 ```{r}
 wd_clean <- wd_raw %>% replace_with_na_all(condition = ~.x == -999)
 ```
+
+# get col names
+```{r}
+names(wd_clean)
+```
+
+# depth vs gr
+```{r}
+ggplot() +
+  geom_point(data = wd_clean, aes(x = CGR.gAPI,y = DEPTH.m), color= 'green') +
+  geom_point(data = wd_clean, aes(x = CPI_CGR.gAPI,y = DEPTH.m), colour='red') +
+  scale_y_reverse(limits=c(2000,1825))
+```
+
+# scatterplot of two GR measurement
+```{r}
+ggplot(data = wd_clean, aes(x = CGR.gAPI, y = CPI_CGR.gAPI)) +
+  geom_point(alpha=.2) +
+  scale_x_continuous(limits = c(0,50)) +
+  scale_y_continuous(limits = c(0,50)) +
+  geom_smooth()
+```
+
+# correlation of two GR measurements
+```{r}
+GE_correl <- with(wd_clean, cor.test(CGR.gAPI, CPI_CGR.gAPI, method = 'pearson'))
+GE_correl
+```
+
+# plot 3 variables together
+```{r}
+ggplot(data = wd_clean, aes(x = LLD.ohmm / LLS.ohmm, y = DEPTH.m)) +
+  geom_point(alpha=.1, colour='red') +
+  scale_y_reverse(limits = c(2250, 1800)) +
+  scale_x_log10(breaks=c(.1,1,10,1e2,1e3))
+```
+
+# zoom in on 3 variable plot
+```{r}
+ggplot(data = subset(wd_clean, wd_clean$LLD.ratio > .6 & wd_clean$LLD.ratio < 2), aes(x = LLD.ohmm / LLS.ohmm, y = DEPTH.m)) +
+  geom_point(alpha=.6, colour='red') +
+  scale_y_reverse(limits = c(2250, 1800)) +
+  scale_x_log10(breaks=c(.6, .7, .8, .9, 1, 2), limits = c(.6, 2))
+```
+
+# create categorical data from continuous
+```{r}
+# create new ratio column
+wd_clean$LLD.ratio <- wd_clean$LLD.ohmm / wd_clean$LLS.ohmm
+wd_clean$LLD.ratio.cat <- cut(wd_clean$LLD.ratio, c(.6,.7,.8,.9,1,1.5,2))
+wd_clean$LLD.ratio.cat
+```
+
+# color 3 variables by levels
+```{r}
+ggplot(data = subset(wd_clean, wd_clean$LLD.ratio > .6 & wd_clean$LLD.ratio < 2), aes(x = LLD.ohmm / LLS.ohmm, y = DEPTH.m)) +
+  geom_point(alpha=.6,aes(colour = factor(LLD.ratio.cat))) +
+  scale_y_reverse(limits = c(2250, 1850)) +
+  scale_x_log10(breaks=c(.6, .7, .8, .9, 1, 2), limits = c(.6, 2))
+```
+
+# radioactivity
+```{r}
+# create categorical variable
+summary(wd_clean$POTA..)
+wd_clean$POTA...cat <- cut(wd_clean$POTA.., c(0,0.136,0.281,0.595,1.959))
+```
+
+```{r}
+# plot three variables together
+ggplot(data = subset(wd_clean, wd_clean$URAN.ppm > 0), aes(x = URAN.ppm, y = THOR.ppm)) +
+  geom_point(alpha=.6, aes(colour = factor(POTA...cat)))
+```
+
+```{r}
+# plot three variables with facets
+ggplot(data = subset(wd_clean, wd_clean$URAN.ppm > 0), 
+       aes(x = URAN.ppm, y = THOR.ppm)) +
+  geom_point(alpha = .6, aes(colour = factor(POTA...cat))) +
+  facet_wrap(~POTA...cat)
+```
+
