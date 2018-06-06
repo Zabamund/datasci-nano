@@ -1,0 +1,48 @@
+---
+title: "wellData"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# check working directory
+```{r}
+getwd()
+setwd("/Users/geodev/code/daan-nano/term2/EDA/wellData/")
+list.files()
+```
+
+# import packages
+```{r}
+#install.packages("tidyr")
+```
+```{r}
+#install.packages("dplyr")
+```
+```{r}
+install.packages("naniar")
+```
+
+
+# read libraries
+```{r}
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+library(readxl)
+library(gridExtra)
+library(grid)
+library(naniar)
+```
+
+# read data into dataframe
+```{r}
+wd_raw <- read.csv('welldata.csv')
+str(wd_raw)
+summary(wd_raw)
+```
+
+# replace -999.000 with na using naniar
+```{r}
+wd_clean <- wd_raw %>% replace_with_na_all(condition = ~.x == -999)
+```
