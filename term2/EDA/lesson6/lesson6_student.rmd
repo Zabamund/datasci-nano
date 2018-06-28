@@ -24,6 +24,17 @@ names(diamonds)
 str(diamonds)
 ```
 
+# read libraries
+```{r}
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+library(readxl)
+library(gridExtra)
+library(grid)
+library(naniar)
+```
+
 # histogram
 ```{r}
 ggplot(data = diamonds, aes(x = log(price), fill = diamonds$cut)) + 
@@ -42,6 +53,14 @@ ggplot(data = diamonds, aes(x = table,y = price)) +
   geom_point(aes(colour = diamonds$cut)) + 
   scale_x_continuous(breaks = seq(40, 80, 5))
 ```
+
+```{r}
+ggplot(data = subset(diamonds, (carat > 0 & carat <= quantile(carat, .99) & price <= quantile(price, .99))), aes(x = carat, y = price)) +
+  geom_point() +
+  stat_smooth(method = 'lm') +
+  geom_smooth(colour = 'red')
+```
+
 
 # volume variable
 ```{r}
@@ -104,7 +123,12 @@ library(memisc)
 # sample 10,000 diamonds from the data set
 set.seed(20022012)
 diamond_samp <- diamonds[sample(1:length(diamonds$price), 10000), ]
-ggpairs(diamond_samp, params = c(shape = I('.'), outlier.shape = I('.')))
+# deprecated
+#ggpairs(diamond_samp, params = c(shape = I('.'), outlier.shape = I('.')))
+# new version
+ggpairs(diamond_samp,
+  lower = list(continuous = wrap("points", shape = I('.'))),
+  upper = list(combo = wrap("box", outlier.shape = I('.'))))
 ```
 
 What are some things you notice in the ggpairs output?
@@ -116,7 +140,16 @@ Response:
 Notes:
 
 ```{r The Demand of Diamonds}
+library(gridExtra)
 
+plot1 <- qplot(x=price, data = diamonds, binwidth = 100) + 
+  ggtitle('Price')
+
+plot2 <- qplot(x=price, data = diamonds, binwidth = .01) +
+  ggtitle('Price (log10)') +
+  scale_x_log10()
+
+grid.arrange(plot1, plot2, ncol=1)
 ```
 
 ***
@@ -129,7 +162,9 @@ Notes:
 ### Scatterplot Transformation
 
 ```{r Scatterplot Transformation}
-
+qplot(carat, price, data = diamonds) +
+  scale_y_continuous(trans =log10_trans()) +
+  ggtitle('Price (log10) by Carat')
 ```
 
 
@@ -156,13 +191,14 @@ ggplot(aes(carat, price), data = diamonds) +
 ### Overplotting Revisited
 
 ```{r Sort and Head Tables}
-
+head(sort(table(diamonds$carat), decreasing = TRUE))
+head(sort(table(diamonds$price), decreasing = TRUE))
 ```
 
 
 ```{r Overplotting Revisited}
 ggplot(aes(carat, price), data = diamonds) + 
-  geom_point() + 
+  geom_point(alpha = .5, size = 3/4, position = 'jitter') + 
   scale_x_continuous(trans = cuberoot_trans(), limits = c(0.2, 3),
                      breaks = c(0.2, 0.5, 1, 2, 3)) + 
   scale_y_continuous(trans = log10_trans(), limits = c(350, 15000),
@@ -185,7 +221,7 @@ Alter the code below.
 install.packages('RColorBrewer')
 library(RColorBrewer)
 
-ggplot(aes(x = carat, y = price), data = diamonds) + 
+ggplot(aes(x = carat, y = price, colour=clarity), data = diamonds) + 
   geom_point(alpha = 0.5, size = 1, position = 'jitter') +
   scale_color_brewer(type = 'div',
     guide = guide_legend(title = 'Clarity', reverse = T,
@@ -208,16 +244,16 @@ Response:
 
 Alter the code below.
 ```{r Price vs. Carat and Cut}
-ggplot(aes(x = carat, y = price, color = clarity), data = diamonds) + 
+ggplot(aes(x = carat, y = price, color = cut), data = diamonds) + 
   geom_point(alpha = 0.5, size = 1, position = 'jitter') +
   scale_color_brewer(type = 'div',
-                     guide = guide_legend(title = 'Clarity', reverse = T,
+                     guide = guide_legend(title = 'Cut', reverse = T,
                                           override.aes = list(alpha = 1, size = 2))) +  
   scale_x_continuous(trans = cuberoot_trans(), limits = c(0.2, 3),
                      breaks = c(0.2, 0.5, 1, 2, 3)) + 
   scale_y_continuous(trans = log10_trans(), limits = c(350, 15000),
                      breaks = c(350, 1000, 5000, 10000, 15000)) +
-  ggtitle('Price (log10) by Cube-Root of Carat and Clarity')
+  ggtitle('Price (log10) by Cube-Root of Carat and Cut')
 ```
 
 ***
@@ -231,16 +267,16 @@ Response:
 
 Alter the code below.
 ```{r Price vs. Carat and Color}
-ggplot(aes(x = carat, y = price, color = cut), data = diamonds) + 
+ggplot(aes(x = carat, y = price, color = color), data = diamonds) + 
   geom_point(alpha = 0.5, size = 1, position = 'jitter') +
   scale_color_brewer(type = 'div',
-                     guide = guide_legend(title = Cut, reverse = T,
+                     guide = guide_legend(title = 'Color', reverse = F,
                                           override.aes = list(alpha = 1, size = 2))) +  
   scale_x_continuous(trans = cuberoot_trans(), limits = c(0.2, 3),
                      breaks = c(0.2, 0.5, 1, 2, 3)) + 
   scale_y_continuous(trans = log10_trans(), limits = c(350, 15000),
                      breaks = c(350, 1000, 5000, 10000, 15000)) +
-  ggtitle('Price (log10) by Cube-Root of Carat and Cut')
+  ggtitle('Price (log10) by Cube-Root of Carat and Color')
 ```
 
 ***
@@ -289,13 +325,13 @@ Response:
 Notes:
 
 ```{r A Bigger, Better Data Set}
-install.package('bitops')
+install.packages('bitops')
 install.packages('RCurl')
 library('bitops')
 library('RCurl')
 
-diamondsurl = getBinaryURL("https://raw.github.com/solomonm/diamonds-data/master/BigDiamonds.Rda")
-load(rawConnection(diamondsurl))
+#diamondsurl = getBinaryURL("https://raw.github.com/solomonm/diamonds-data/master/BigDiamonds.Rda")
+load('BigDiamonds.Rda')
 ```
 
 The code used to obtain the data is available here:
@@ -305,7 +341,16 @@ https://github.com/solomonm/diamonds-data
 Notes:
 
 ```{r Building a Model Using the Big Diamonds Data Set}
-
+diamondsbig$logprice = log(diamondsbig$price)
+# sample the data: diamonds < 10KUSD
+diamondsBigSample <- subset(diamondsbig, diamondsbig$price < 1e4 & diamondsbig$cert == 'GIA')
+# build the models
+m1 <- lm(I(log(price)) ~ I(carat^(1/3)), data = diamondsBigSample)
+m2 <- update(m1, ~ . + carat)
+m3 <- update(m2, ~ . + cut)
+m4 <- update(m3, ~ . + color)
+m5 <- update(m4, ~ . + clarity)
+mtable(m1, m2, m3, m4, m5)
 ```
 
 
@@ -317,11 +362,12 @@ Example Diamond from BlueNile:
 Round 1.00 Very Good I VS1 $5,601
 
 ```{r}
-#Be sure you???ve loaded the library memisc and have m5 saved as an object in your workspace.
+#Be sure you've loaded the library memisc and have m5 saved as an object in your workspace.
 thisDiamond = data.frame(carat = 1.00, cut = "V.Good",
                          color = "I", clarity="VS1")
-modelEstimate = predict(m5, newdata = thisDiamond,
-                        interval="prediction", level = .95)
+modelEstimate = predict(m5, newdata = thisDiamond, interval="prediction", level = .95)
+# exp model estimate:
+exp(modelEstimate)
 ```
 
 Evaluate how well the model predicts the BlueNile diamond's price. Think about the fitted point estimate as well as the 95% CI.
